@@ -14,7 +14,7 @@ export function Header({ locale, copy }: { locale: Locale; copy: Content }) {
   const router = useRouter();
   const links = [
     ["platform", copy.nav.platform], ["evidence", copy.nav.evidence],
-    ["how-it-works", copy.nav.how], ["faq", copy.nav.faq],
+    ["how-it-works", copy.nav.how], ["film", copy.nav.film], ["faq", copy.nav.faq],
   ];
 
   useEffect(() => {

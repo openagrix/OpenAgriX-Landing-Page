@@ -21,6 +21,7 @@ export interface Content {
     platform: string;
     evidence: string;
     how: string;
+    film: string;
     faq: string;
     cta: string;
   };
@@ -60,6 +61,13 @@ export interface Content {
     title: string;
     description: string;
     steps: { title: string; description: string }[];
+  };
+  film: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    playerTitle: string;
+    watch: string;
   };
   faq: {
     eyebrow: string;
@@ -138,6 +146,7 @@ export const content: Record<Locale, Content> = {
       platform: "Nền tảng",
       evidence: "Bằng chứng",
       how: "Cách hoạt động",
+      film: "Phim",
       faq: "Hỏi đáp",
       cta: "Khám phá ứng dụng",
     },
@@ -259,6 +268,14 @@ export const content: Record<Locale, Content> = {
         },
       ],
     },
+    film: {
+      eyebrow: "MỘT PHIM NGẮN",
+      title: "Xem câu chuyện trong ba phút.",
+      description:
+        "Từ ruộng đến người mua: OpenAgriX giữ hồ sơ thu hoạch ở một nơi, rồi lưu dấu vân tay trên Solana Devnet để người xem đối chiếu hồ sơ còn khớp.",
+      playerTitle: "Phim OpenAgriX",
+      watch: "Xem trên YouTube",
+    },
     faq: {
       eyebrow: "HIỂU THÊM VỀ OPENAGRIX",
       title: "Những điều bạn\ncó thể đang muốn biết.",
@@ -358,6 +375,7 @@ export const content: Record<Locale, Content> = {
       platform: "Platform",
       evidence: "Evidence",
       how: "How it works",
+      film: "Film",
       faq: "FAQ",
       cta: "Explore the app",
     },
@@ -478,6 +496,14 @@ export const content: Record<Locale, Content> = {
             "Share your Explorer profile so buyers can follow the record history and learn about your produce's origins.",
         },
       ],
+    },
+    film: {
+      eyebrow: "A SHORT FILM",
+      title: "See the story in three minutes.",
+      description:
+        "From the field to the buyer: OpenAgriX keeps a harvest record in one place, then stores a fingerprint on Solana Devnet so people can check that the record still matches.",
+      playerTitle: "OpenAgriX film",
+      watch: "Watch on YouTube",
     },
     faq: {
       eyebrow: "GET TO KNOW OPENAGRIX",

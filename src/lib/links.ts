@@ -5,6 +5,8 @@ export const appLinks = {
   guides: "https://app.openagrix.com/guides/evidence",
   github: "https://github.com/openagrix/OpenAgri-Living-Matrix",
   social: "https://x.com/OpenAgriX",
+  film: "https://www.youtube.com/watch?v=NxtI6N9QQJs",
+  filmEmbed: "https://www.youtube-nocookie.com/embed/NxtI6N9QQJs",
   email: "mailto:hello@openagrix.com",
 } as const;
 
