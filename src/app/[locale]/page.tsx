@@ -12,6 +12,7 @@ import { BackToTop } from "@/components/back-to-top";
 import { brandName, content, isLocale, type EvidenceId } from "@/lib/content";
 import { appLinks, communityLogos } from "@/lib/links";
 
+const conversationImages = ["/images/field/singapore.jpg", "/images/field/wins-farm.jpg", "/images/field/malaysia.jpg"];
 const evidenceIcons = { harvest: Wheat, soil: Sprout, carbon: Wind, biodiversity: Trees, honey: Droplets, quality: BadgeCheck } satisfies Record<EvidenceId, typeof Wheat>;
 const featureIcons = { shield: ShieldCheck, scan: ScanLine, leaf: Leaf };
 
@@ -114,6 +115,33 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
         </section>
 
+        <section id="conversations" className="section conversations-section" aria-labelledby="conversations-title">
+          <div className="container">
+            <div className="section-heading center">
+              <span className="eyebrow">{t.conversations.eyebrow}</span>
+              <h2 id="conversations-title">{t.conversations.title}</h2>
+              <p className="section-description">{t.conversations.description}</p>
+            </div>
+            <div className="conversations-grid">
+              {t.conversations.items.map((item, index) => (
+                <article className="conversation-card" key={item.title}>
+                  <Image
+                    src={conversationImages[index]}
+                    alt={item.alt}
+                    width={1100}
+                    height={619}
+                    sizes="(max-width: 720px) 33vw, 360px"
+                  />
+                  <div className="conversation-copy">
+                    <h3>{item.title}</h3>
+                    <p>{item.caption}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="faq" className="section faq-section" aria-labelledby="faq-title"><div className="container faq-layout">
           <div className="section-heading"><span className="eyebrow"><CircleHelp size={16} aria-hidden="true" />{t.faq.eyebrow}</span><h2 id="faq-title">{t.faq.title}</h2><p className="section-description">{t.faq.description}</p><a href={appLinks.email} className="text-link">hello@openagrix.com<ArrowUpRight size={17} aria-hidden="true" /></a></div>
           <div className="faq-list">{t.faq.items.map((item, index) => <details className="faq-item" key={item.question} name="openagrix-faq" open={index === 0}><summary><span>{item.question}</span><Plus className="faq-plus" size={20} aria-hidden="true" /></summary><p>{item.answer}</p></details>)}</div>
@@ -141,7 +169,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="footer-main">
           <div className="footer-brand"><Link href={`/${locale}`} aria-label={brandName}><Brand tagline={t.ui.brandTagline} size="footer" /></Link><p>{t.footer.description}</p><div className="social-links"><a href={appLinks.github} aria-label={`${brandName} GitHub`}><Github size={19} aria-hidden="true" /></a><a href={appLinks.social} aria-label={`${brandName} X`}><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l8.2-9.4L.8 2h6.5l4.5 6.8L18.9 2ZM17.8 20h1.7L6.4 3.9H4.6L17.8 20Z" /></svg></a></div></div>
           <nav className="footer-column" aria-label={t.footer.product}><h3>{t.footer.product}</h3><a href="#platform">{t.nav.platform}</a><a href={appLinks.explore}>{t.footer.explorer}</a><a href={appLinks.register}>{t.footer.register}</a></nav>
-          <nav className="footer-column" aria-label={t.footer.resources}><h3>{t.footer.resources}</h3><a href="#how-it-works">{t.nav.how}</a><a href="#film">{t.nav.film}</a><a href={appLinks.guides}>{t.footer.guides}</a><a href="#faq">{t.nav.faq}</a></nav>
+          <nav className="footer-column" aria-label={t.footer.resources}><h3>{t.footer.resources}</h3><a href="#how-it-works">{t.nav.how}</a><a href={appLinks.guides}>{t.footer.guides}</a><a href="#faq">{t.nav.faq}</a></nav>
           <div className="footer-column"><h3>{t.footer.contact}</h3><a href={appLinks.email}>hello@openagrix.com</a><a href={appLinks.github}>GitHub<ArrowUpRight size={14} aria-hidden="true" /></a><a href={appLinks.social}>X / Twitter<ArrowUpRight size={14} aria-hidden="true" /></a></div>
         </div>
         <div className="footer-bottom"><span>{t.footer.copyright}</span><span className="footer-devnet"><span />{t.footer.devnet}</span><a href={appLinks.home} aria-label={t.footer.source}>{brandName}<ArrowUpRight size={13} aria-hidden="true" /></a></div>

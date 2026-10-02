@@ -1,4 +1,4 @@
-# OpenAgriX landing page
+# OpenAgriX landing page v0.4.3
 
 Bilingual marketing site for [OpenAgriX](https://app.openagrix.com/), a Solana application for recording and exploring agricultural evidence. The site introduces the product, explains the evidence types, and sends people to the live app. It does not collect form data, connect wallets, or write blockchain records.
 

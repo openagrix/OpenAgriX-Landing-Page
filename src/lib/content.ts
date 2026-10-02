@@ -22,6 +22,7 @@ export interface Content {
     evidence: string;
     how: string;
     film: string;
+    conversations: string;
     faq: string;
     cta: string;
   };
@@ -68,6 +69,12 @@ export interface Content {
     description: string;
     playerTitle: string;
     watch: string;
+  };
+  conversations: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: { title: string; caption: string; alt: string }[];
   };
   faq: {
     eyebrow: string;
@@ -147,6 +154,7 @@ export const content: Record<Locale, Content> = {
       evidence: "Bằng chứng",
       how: "Cách hoạt động",
       film: "Phim",
+      conversations: "Thực địa",
       faq: "Hỏi đáp",
       cta: "Khám phá ứng dụng",
     },
@@ -276,6 +284,29 @@ export const content: Record<Locale, Content> = {
       playerTitle: "Phim OpenAgriX",
       watch: "Xem trên YouTube",
     },
+    conversations: {
+      eyebrow: "NGOÀI THỰC ĐỊA",
+      title: "Ba cuộc trao đổi, đặt cạnh nhau.",
+      description:
+        "Những cuộc gặp sớm và một chuyến thăm trang trại. Đây chưa phải hợp đồng cung ứng, và chưa ghi nhận khách hàng trả phí từ các cuộc gặp này.",
+      items: [
+        {
+          title: "Đối tác Singapore",
+          caption: "Trao đổi về những gì người mua siêu thị cần kiểm tra trước khi nhận một lô hàng.",
+          alt: "Năm người trong cuộc gặp về chuỗi siêu thị bán lẻ ở Singapore.",
+        },
+        {
+          title: "Win's Farm, Châu Đức",
+          caption: "Thăm trang trại ngày 26/9/2026, ngày họ ra mắt nền tảng số của chính mình.",
+          alt: "Win's Farm ở Châu Đức, mật ong trên bàn và banner ra mắt nền tảng.",
+        },
+        {
+          title: "Sầu riêng, Malaysia",
+          caption: "Trao đổi với đối tác Malaysia về xuất khẩu sầu riêng, gồm một chuyến thăm vườn.",
+          alt: "Chuyến thăm vườn sầu riêng và cuộc trao đổi ở Malaysia.",
+        },
+      ],
+    },
     faq: {
       eyebrow: "HIỂU THÊM VỀ OPENAGRIX",
       title: "Những điều bạn\ncó thể đang muốn biết.",
@@ -376,6 +407,7 @@ export const content: Record<Locale, Content> = {
       evidence: "Evidence",
       how: "How it works",
       film: "Film",
+      conversations: "Field",
       faq: "FAQ",
       cta: "Explore the app",
     },
@@ -504,6 +536,29 @@ export const content: Record<Locale, Content> = {
         "From the field to the buyer: OpenAgriX keeps a harvest record in one place, then stores a fingerprint on Solana Devnet so people can check that the record still matches.",
       playerTitle: "OpenAgriX film",
       watch: "Watch on YouTube",
+    },
+    conversations: {
+      eyebrow: "IN THE FIELD",
+      title: "Three conversations, side by side.",
+      description:
+        "Early meetings and a farm visit. These are not supply contracts, and no paying customer is recorded from them.",
+      items: [
+        {
+          title: "A Singaporean partner",
+          caption: "A meeting about what a supermarket buyer would check before accepting a lot.",
+          alt: "Five people at a meeting about a Singapore retail supermarket chain.",
+        },
+        {
+          title: "Win's Farm, Chau Duc",
+          caption: "A visit on 26 September 2026, the day the farm launched its own digital platform.",
+          alt: "Win's Farm in Chau Duc, with honey on the table and the platform launch banner.",
+        },
+        {
+          title: "Durian, Malaysia",
+          caption: "A discussion with a Malaysian partner on durian exports, including a farm visit.",
+          alt: "A durian farm visit and an export discussion in Malaysia.",
+        },
+      ],
     },
     faq: {
       eyebrow: "GET TO KNOW OPENAGRIX",
